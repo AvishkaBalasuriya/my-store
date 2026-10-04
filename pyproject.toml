@@ -5,3 +5,41 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
+
+[dependency-groups]
+dev = [
+    { include-group = "lint" },
+    { include-group = "security" },
+    "pydantic>=2.13.5",
+]
+lint = ["black>=26.5.1", "isort>=9.0.2", "ruff>=0.16.9"]
+security = ["detect-secrets>=1.5.0"]
+
+[tool.black]
+line-length = 90
+target-version = ["py313"]
+
+[tool.ruff]
+src = ["app/src/"]
+line-length = 90
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4", "PIE", "RET"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["app/src/"]
+testpaths = ["app/tests/"]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+branch = true
+source = ["app/src/"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
