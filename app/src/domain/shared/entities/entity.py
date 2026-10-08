@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
-from uuid import UUID, uuid7
+from uuid import UUID
 
 
 @dataclass(eq=False, kw_only=True)
