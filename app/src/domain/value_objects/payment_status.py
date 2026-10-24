@@ -3,7 +3,8 @@ from enum import Enum
 from typing import Optional
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.payment_exception import PaymentStatusInvalidException
+from src.domain.shared.exceptions.payment_exception import \
+    PaymentStatusInvalidException
 
 
 class PaymentStatusCode(str, Enum):

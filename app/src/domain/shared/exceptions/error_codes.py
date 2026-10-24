@@ -149,3 +149,15 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         short_desc="PAYMENT_STATUS_INVALID_ERROR",
         message="The payment has an invalid status.",
     )
+
+    # Tracking-related errors
+    GENERIC_TRACKING_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="GENERIC_TRACKING_ERROR",
+        message="An error occurred while processing the tracking information.",
+    )
+    TRACKING_STATUS_INVALID_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="TRACKING_STATUS_INVALID_ERROR",
+        message="The tracking status is invalid.",
+    )

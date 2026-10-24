@@ -1,7 +1,8 @@
 import unittest
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.payment_exception import PaymentStatusInvalidException
+from src.domain.shared.exceptions.payment_exception import \
+    PaymentStatusInvalidException
 from src.domain.value_objects import PaymentStatus, PaymentStatusCode
 
 

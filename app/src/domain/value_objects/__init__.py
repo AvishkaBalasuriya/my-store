@@ -7,5 +7,6 @@ from src.domain.value_objects.payment_method import (PaymentMethod,
 from src.domain.value_objects.payment_status import (PaymentStatus,
                                                      PaymentStatusCode)
 from src.domain.value_objects.price import Price
-from src.domain.value_objects.tracking_stage import (TrackingStage,
-                                                     TrackingStageCode)
+
+from app.src.domain.value_objects.tracking_status import (TrackingStatus,
+                                                          TrackingStatusCode)
