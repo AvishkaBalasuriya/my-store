@@ -1,8 +1,9 @@
 import unittest
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.payment_exception import \
-    PaymentMethodInvalidMethodException
+from src.domain.shared.exceptions.payment_exception import (
+    PaymentMethodInvalidMethodException,
+)
 from src.domain.value_objects import PaymentMethod, PaymentMethodCode
 
 
@@ -31,8 +32,8 @@ class TestPaymentMethod(unittest.TestCase):
         )
 
     def test_create_payment_method_with_default_code(self):
-        payment_method = PaymentMethod.create(code=self.valid_payment_method_code)
-        self.assertEqual(payment_method.code, self.valid_payment_method_code)
+        payment_method = PaymentMethod.create()
+        self.assertEqual(payment_method.code, PaymentMethodCode.QR)
 
     def test_is_card_property(self):
         payment_method = PaymentMethod.create(code=PaymentMethodCode.CARD)
