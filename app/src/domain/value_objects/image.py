@@ -3,14 +3,13 @@ from typing import ClassVar, Optional
 
 from src.domain.interfaces.url_validator import URLValidator
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.image_exception import \
-    ImageURLValidationException
+from src.domain.shared.exceptions.image_exception import ImageURLValidationException
 
 
 @dataclass(kw_only=True, frozen=True)
 class Image:
     url: str
-    alt_text: Optional[str] = None
+    alt_text: str
 
     __url_validator: ClassVar[URLValidator] = None
 
