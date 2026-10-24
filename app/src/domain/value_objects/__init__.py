@@ -1,8 +1,11 @@
-from .email import Email
-from .image import Image
-from .mobile import Mobile
-from .order_status import OrderStatus, OrderStatusCode
-from .payment_method import PaymentMethod, PaymentMethodCode
-from .payment_status import PaymentStatus, PaymentStatusCode
-from .price import Price
-from .tracking_stage import TrackingStage, TrackingStageCode
+from src.domain.value_objects.email import Email
+from src.domain.value_objects.image import Image
+from src.domain.value_objects.mobile import Mobile
+from src.domain.value_objects.order_status import OrderStatus, OrderStatusCode
+from src.domain.value_objects.payment_method import (PaymentMethod,
+                                                     PaymentMethodCode)
+from src.domain.value_objects.payment_status import (PaymentStatus,
+                                                     PaymentStatusCode)
+from src.domain.value_objects.price import Price
+from src.domain.value_objects.tracking_stage import (TrackingStage,
+                                                     TrackingStageCode)

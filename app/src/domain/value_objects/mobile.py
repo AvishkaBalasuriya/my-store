@@ -2,8 +2,9 @@ import re
 from dataclasses import dataclass
 from typing import ClassVar
 
-from app.src.domain.shared.exceptions.error_codes import ErrorCodes
-from app.src.domain.shared.exceptions.mobile_exception import MobileValidationException
+from src.domain.shared.exceptions.error_codes import ErrorCodes
+from src.domain.shared.exceptions.mobile_exception import \
+    MobileValidationException
 
 
 @dataclass(kw_only=True, frozen=True, eq=False)

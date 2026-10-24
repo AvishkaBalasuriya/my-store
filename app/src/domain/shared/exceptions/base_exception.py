@@ -1,6 +1,6 @@
 from typing import Optional
 
-from app.src.domain.shared.exceptions.error_codes import ErrorCodes
+from src.domain.shared.exceptions.error_codes import ErrorCodes
 
 
 class BaseDomainError(Exception):

@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from app.src.domain.shared.entities.aggregate_root import AggregateRoot
-from app.src.domain.shared.entities.entity import Entity
-from app.src.domain.value_objects import Email, Image, Mobile
+from src.domain.shared.entities.aggregate_root import AggregateRoot
+from src.domain.shared.entities.entity import Entity
+from src.domain.value_objects import Email, Image, Mobile
 
 
 @dataclass(kw_only=True)

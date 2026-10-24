@@ -13,10 +13,10 @@ class PaymentMethodCode(str, Enum):
 @dataclass(kw_only=True, frozen=True)
 class PaymentMethod:
     code: Optional[PaymentMethodCode] = field(
-        default_factory=lambda: PaymentMethod.update(PaymentMethodCode.QR),
+        default=PaymentMethodCode.QR,
         doc="Payment method",
     )
 
     @classmethod
-    def update(cls, code: PaymentMethodCode) -> "PaymentMethod":
+    def create(cls, code: PaymentMethodCode) -> "PaymentMethod":
         return cls(code=code)

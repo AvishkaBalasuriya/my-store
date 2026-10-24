@@ -24,6 +24,11 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         short_desc="IMAGE_URL_EMPTY_ERROR",
         message="The provided image URL is empty.",
     )
+    IMAGE_URL_INVALID_FORMAT_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="IMAGE_URL_INVALID_FORMAT_ERROR",
+        message="The provided image URL is invalid.",
+    )
 
     # Email-related errors
     GENERIC_EMAIL_ERROR = ERROR_OBJECT(
@@ -35,6 +40,11 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         status_code=400,
         short_desc="EMAIL_EMPTY_ERROR",
         message="The provided email address is empty.",
+    )
+    EMAIL_INVALID_FORMAT_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="EMAIL_INVALID_FORMAT_ERROR",
+        message="The provided email address format is invalid.",
     )
 
     # Mobile number-related errors
@@ -74,4 +84,38 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         status_code=400,
         short_desc="PRICE_CURRENCY_EMPTY_ERROR",
         message="The provided currency is empty.",
+    )
+
+    # User-related errors
+    GENERIC_USER_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="GENERIC_USER_ERROR",
+        message="An error occurred while processing the user.",
+    )
+    USER_MUST_HAVE_MOBILE_OR_EMAIL_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="USER_MUST_HAVE_MOBILE_OR_EMAIL_ERROR",
+        message="The user must have either a mobile number or an email address.",
+    )
+
+    # Entity-related errors
+    GENERIC_ENTITY_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="GENERIC_ENTITY_ERROR",
+        message="An error occurred while processing the entity.",
+    )
+    ENTITY_CANNOT_BE_RETAINED_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="ENTITY_CANNOT_BE_RETAINED_ERROR",
+        message="The entity cannot be retained as it is beyond the retainable period.",
+    )
+    ENTITY_NOT_DISCARDED_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="ENTITY_NOT_DISCARDED_ERROR",
+        message="The entity has not been discarded.",
+    )
+    ENTITY_ALREADY_DISCARDED_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="ENTITY_ALREADY_DISCARDED_ERROR",
+        message="The entity has already been discarded.",
     )

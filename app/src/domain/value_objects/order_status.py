@@ -4,18 +4,18 @@ from typing import Optional
 
 
 class OrderStatusCode(str, Enum):
-    PENDING = "pending"
-    PROCESSING = "processing"
-    SHIPPED = "shipped"
-    DELIVERED = "delivered"
-    CANCELLED = "cancelled"
-    RETURNED = "returned"
+    PENDING = "PENDING"
+    PROCESSING = "PROCESSING"
+    SHIPPED = "SHIPPED"
+    DELIVERED = "DELIVERED"
+    CANCELLED = "CANCELLED"
+    RETURNED = "RETURNED"
 
 
 @dataclass(kw_only=True, frozen=True)
 class OrderStatus:
     code: Optional[OrderStatusCode] = field(
-        default_factory=lambda: OrderStatus.update(OrderStatusCode.PENDING),
+        default=OrderStatusCode.PENDING,
         doc="Order status",
     )
 
@@ -44,5 +44,5 @@ class OrderStatus:
         return self.code == OrderStatusCode.RETURNED
 
     @classmethod
-    def update(cls, code: OrderStatusCode) -> "OrderStatus":
+    def create(cls, code: OrderStatusCode) -> "OrderStatus":
         return cls(code=code)

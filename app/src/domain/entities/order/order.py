@@ -2,9 +2,9 @@ from dataclasses import dataclass, field
 from typing import List, Optional
 from uuid import UUID
 
-from app.src.domain.shared.entities.aggregate_root import AggregateRoot
-from app.src.domain.shared.entities.entity import Entity
-from app.src.domain.value_objects import OrderStatus
+from src.domain.shared.entities.aggregate_root import AggregateRoot
+from src.domain.shared.entities.entity import Entity
+from src.domain.value_objects import OrderStatus
 
 
 @dataclass(kw_only=True)

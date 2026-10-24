@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from app.src.domain.shared.exceptions.error_codes import ErrorCodes
-from app.src.domain.shared.exceptions.price_exception import PriceValidationException
+from src.domain.shared.exceptions.error_codes import ErrorCodes
+from src.domain.shared.exceptions.price_exception import PriceValidationException
 
 
 @dataclass(kw_only=True, frozen=True, eq=False)
@@ -45,5 +45,5 @@ class Price:
         return hash(self.formatted)
 
     @classmethod
-    def update(cls, amount: float, currency: str) -> "Price":
+    def create(cls, amount: float, currency: str) -> "Price":
         return cls(amount=amount, currency=currency)
