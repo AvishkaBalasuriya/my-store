@@ -1,10 +1,9 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 from typing import Optional
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.order_exception import \
-    OrderInvalidStatusException
+from src.domain.shared.exceptions.order_exception import OrderInvalidStatusException
 
 
 class OrderStatusCode(str, Enum):

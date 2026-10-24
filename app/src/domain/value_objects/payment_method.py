@@ -1,10 +1,11 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 from typing import Optional
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.payment_exception import \
-    PaymentMethodInvalidMethodException
+from src.domain.shared.exceptions.payment_exception import (
+    PaymentMethodInvalidMethodException,
+)
 
 
 class PaymentMethodCode(str, Enum):
