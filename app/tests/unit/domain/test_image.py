@@ -3,7 +3,7 @@ import unittest
 from src.domain.shared.exceptions.error_codes import ErrorCodes
 from src.domain.shared.exceptions.image_exception import \
     ImageURLValidationException
-from src.domain.value_objects.image import Image
+from src.domain.value_objects import Image
 from src.infrastructure.services.url_validator import UrlValidatorService
 
 

@@ -3,7 +3,7 @@ import unittest
 from src.domain.shared.exceptions.error_codes import ErrorCodes
 from src.domain.shared.exceptions.mobile_exception import \
     MobileValidationException
-from src.domain.value_objects.mobile import Mobile
+from src.domain.value_objects import Mobile
 
 
 class TestMobileNumber(unittest.TestCase):

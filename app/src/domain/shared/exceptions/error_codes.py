@@ -132,3 +132,20 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         short_desc="ORDER_INVALID_STATUS_ERROR",
         message="The order has an invalid status.",
     )
+
+    # Payment-related errors
+    GENERIC_PAYMENT_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="GENERIC_PAYMENT_ERROR",
+        message="An error occurred while processing the payment.",
+    )
+    PAYMENT_METHOD_INVALID_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="PAYMENT_METHOD_INVALID_ERROR",
+        message="The provided payment method is invalid.",
+    )
+    PAYMENT_STATUS_INVALID_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="PAYMENT_STATUS_INVALID_ERROR",
+        message="The payment has an invalid status.",
+    )

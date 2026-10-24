@@ -3,7 +3,7 @@ import unittest
 from src.domain.shared.exceptions.email_exception import \
     EmailValidationException
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.value_objects.email import Email
+from src.domain.value_objects import Email
 from src.infrastructure.services.email_validator import EmailValidatorService
 
 
