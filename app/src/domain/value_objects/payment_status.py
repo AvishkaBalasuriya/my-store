@@ -16,10 +16,7 @@ class PaymentStatusCode(str, Enum):
 
 @dataclass(kw_only=True, frozen=True)
 class PaymentStatus:
-    code: Optional[PaymentStatusCode] = field(
-        default=PaymentStatusCode.PENDING,
-        doc="Payment status",
-    )
+    code: PaymentStatusCode
 
     def __post_init__(self):
         if not isinstance(self.code, PaymentStatusCode):
@@ -50,5 +47,7 @@ class PaymentStatus:
         return self.code == PaymentStatusCode.CANCELLED
 
     @classmethod
-    def create(cls, code: PaymentStatusCode) -> "PaymentStatus":
+    def create(
+        cls, code: Optional[PaymentStatusCode] = PaymentStatusCode.PENDING
+    ) -> "PaymentStatus":
         return cls(code=code)

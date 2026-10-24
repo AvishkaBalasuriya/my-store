@@ -3,8 +3,7 @@ from enum import Enum
 from typing import Optional
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.order_exception import \
-    OrderInvalidStatusException
+from src.domain.shared.exceptions.order_exception import OrderInvalidStatusException
 
 
 class OrderStatusCode(str, Enum):
@@ -18,10 +17,7 @@ class OrderStatusCode(str, Enum):
 
 @dataclass(kw_only=True, frozen=True)
 class OrderStatus:
-    code: Optional[OrderStatusCode] = field(
-        default=OrderStatusCode.PENDING,
-        doc="Order status",
-    )
+    code: OrderStatusCode
 
     def __post_init__(self):
         if not isinstance(self.code, OrderStatusCode):
@@ -56,5 +52,7 @@ class OrderStatus:
         return self.code == OrderStatusCode.RETURNED
 
     @classmethod
-    def create(cls, code: OrderStatusCode) -> "OrderStatus":
+    def create(
+        cls, code: Optional[OrderStatusCode] = OrderStatusCode.PENDING
+    ) -> "OrderStatus":
         return cls(code=code)

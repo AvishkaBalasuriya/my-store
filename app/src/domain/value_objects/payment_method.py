@@ -3,8 +3,9 @@ from enum import Enum
 from typing import Optional
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.payment_exception import \
-    PaymentMethodInvalidMethodException
+from src.domain.shared.exceptions.payment_exception import (
+    PaymentMethodInvalidMethodException,
+)
 
 
 class PaymentMethodCode(str, Enum):
@@ -16,10 +17,7 @@ class PaymentMethodCode(str, Enum):
 
 @dataclass(kw_only=True, frozen=True)
 class PaymentMethod:
-    code: Optional[PaymentMethodCode] = field(
-        default=PaymentMethodCode.QR,
-        doc="Payment method",
-    )
+    code: PaymentMethodCode
 
     def __post_init__(self):
         if not isinstance(self.code, PaymentMethodCode):
@@ -46,5 +44,7 @@ class PaymentMethod:
         return self.code == PaymentMethodCode.CASH
 
     @classmethod
-    def create(cls, code: PaymentMethodCode) -> "PaymentMethod":
+    def create(
+        cls, code: Optional[PaymentMethodCode] = PaymentMethodCode.QR
+    ) -> "PaymentMethod":
         return cls(code=code)

@@ -1,8 +1,7 @@
 import unittest
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.order_exception import \
-    OrderInvalidStatusException
+from src.domain.shared.exceptions.order_exception import OrderInvalidStatusException
 from src.domain.value_objects.order_status import OrderStatus, OrderStatusCode
 
 
@@ -31,7 +30,7 @@ class TestOrderStatus(unittest.TestCase):
         )
 
     def test_create_order_status_with_default_code(self):
-        order_status = OrderStatus.create(code=OrderStatusCode.PENDING)
+        order_status = OrderStatus.create()
         self.assertEqual(order_status.code, OrderStatusCode.PENDING)
 
     def test_is_pending_property(self):

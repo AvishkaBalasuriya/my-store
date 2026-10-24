@@ -1,8 +1,7 @@
 import unittest
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.payment_exception import \
-    PaymentStatusInvalidException
+from src.domain.shared.exceptions.payment_exception import PaymentStatusInvalidException
 from src.domain.value_objects import PaymentStatus, PaymentStatusCode
 
 
@@ -29,6 +28,10 @@ class TestPaymentStatus(unittest.TestCase):
         self.assertEqual(
             cx.exception.message, ErrorCodes.PAYMENT_STATUS_INVALID_ERROR.message
         )
+
+    def test_create_payment_status_with_default_code(self):
+        payment_status = PaymentStatus.create()
+        self.assertEqual(payment_status.code, PaymentStatusCode.PENDING)
 
     def test_is_pending_property(self):
         payment_status = PaymentStatus.create(code=PaymentStatusCode.PENDING)
