@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 
 from src.domain.shared.exceptions.error_codes import ErrorCodes
-from src.domain.shared.exceptions.price_exception import PriceValidationException
+from src.domain.shared.exceptions.price_exception import \
+    PriceValidationException
 
 
 @dataclass(kw_only=True, frozen=True, eq=False)

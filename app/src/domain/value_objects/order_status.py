@@ -2,6 +2,9 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional
 
+from src.domain.shared.exceptions.error_codes import ErrorCodes
+from src.domain.shared.exceptions.order_exception import OrderInvalidStatusException
+
 
 class OrderStatusCode(str, Enum):
     PENDING = "PENDING"
@@ -18,6 +21,14 @@ class OrderStatus:
         default=OrderStatusCode.PENDING,
         doc="Order status",
     )
+
+    def __post_init__(self):
+        if not isinstance(self.code, OrderStatusCode):
+            raise OrderInvalidStatusException(
+                message=ErrorCodes.ORDER_INVALID_STATUS_ERROR.message,
+                short_desc=ErrorCodes.ORDER_INVALID_STATUS_ERROR.short_desc,
+                code=ErrorCodes.ORDER_INVALID_STATUS_ERROR.status_code,
+            )
 
     @property
     def is_pending(self) -> bool:

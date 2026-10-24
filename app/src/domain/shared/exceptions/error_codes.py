@@ -119,3 +119,16 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         short_desc="ENTITY_ALREADY_DISCARDED_ERROR",
         message="The entity has already been discarded.",
     )
+
+    # Order-related errors
+    GENERIC_ORDER_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="GENERIC_ORDER_ERROR",
+        message="An error occurred while processing the order.",
+    )
+
+    ORDER_INVALID_STATUS_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="ORDER_INVALID_STATUS_ERROR",
+        message="The order has an invalid status.",
+    )
