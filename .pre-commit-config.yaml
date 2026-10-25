@@ -1,0 +1,50 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+
+      - id: end-of-file-fixer
+
+      - id: check-yaml
+
+      - id: check-toml
+
+      - id: check-merge-conflict
+
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+
+      - id: debug-statements
+
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.1
+    hooks:
+      - id: ruff
+        args:
+          - --fix
+          - --exit-non-zero-on-fix
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args:
+          - --baseline
+          - .secrets.baseline
+
+  - repo: local
+    hooks:
+      - id: unittest
+        name: unittest
+        entry: uv run python -m unittest discover -s app -t app -v
+        language: system
+        pass_filenames: false
+        always_run: true
+        types: [python]
