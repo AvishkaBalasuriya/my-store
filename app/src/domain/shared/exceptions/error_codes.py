@@ -75,15 +75,25 @@ class ErrorCodes(ERROR_OBJECT, Enum):
         short_desc="GENERIC_PRICE_ERROR",
         message="An error occurred while processing the price.",
     )
-    PRICE_NEGATIVE_ERROR = ERROR_OBJECT(
+    PRICE_AMOUNT_EMPTY_OR_NEGATIVE_ERROR = ERROR_OBJECT(
         status_code=400,
-        short_desc="PRICE_NEGATIVE_ERROR",
-        message="The provided price cannot be negative.",
+        short_desc="PRICE_AMOUNT_EMPTY_OR_NEGATIVE_ERROR",
+        message="The provided price cannot be empty or negative.",
     )
     PRICE_CURRENCY_EMPTY_ERROR = ERROR_OBJECT(
         status_code=400,
         short_desc="PRICE_CURRENCY_EMPTY_ERROR",
         message="The provided currency is empty.",
+    )
+    PRICE_INVALID_CURRENCY_CODE_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="PRICE_INVALID_CURRENCY_CODE_ERROR",
+        message="The provided currency code is invalid.",
+    )
+    PRICE_INVALID_AMOUNT_ERROR = ERROR_OBJECT(
+        status_code=400,
+        short_desc="PRICE_INVALID_AMOUNT_ERROR",
+        message="The provided price amount is invalid.",
     )
 
     # User-related errors
