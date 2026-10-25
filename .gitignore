@@ -11,4 +11,4 @@ wheels/
 .venv
 
 # Test Files
-test*.py
+test_s_*.py
